@@ -1,0 +1,4 @@
+﻿  MM_GameProgramming.cpp
+C:\Users\miner\OneDrive\Documents\Games Programming\Code\MM_GameProgramming\MM_GameProgramming.cpp(111,2): warning C4551: function call missing argument list
+C:\Users\miner\OneDrive\Documents\Games Programming\Code\MM_GameProgramming\MM_GameProgramming.cpp(112): warning C4715: 'SDL_main': not all control paths return a value
+  MM_GameProgramming.vcxproj -> C:\Users\miner\OneDrive\Documents\Games Programming\Code\MM_GameProgramming\Debug\MM_GameProgramming.exe
