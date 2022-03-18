@@ -148,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MM_GameProgramming.h" />
+    <ClInclude Include="MM_GameWorld.h" />
     <ClInclude Include="MM_Square.h" />
     <ClInclude Include="MM_Timer.h" />
   </ItemGroup>

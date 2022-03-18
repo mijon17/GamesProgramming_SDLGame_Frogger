@@ -1,4 +1,7 @@
 ﻿  MM_GameProgramming.cpp
-C:\Users\miner\OneDrive\Documents\Games Programming\Code\MM_GameProgramming\MM_GameProgramming.cpp(111,2): warning C4551: function call missing argument list
-C:\Users\miner\OneDrive\Documents\Games Programming\Code\MM_GameProgramming\MM_GameProgramming.cpp(112): warning C4715: 'SDL_main': not all control paths return a value
-  MM_GameProgramming.vcxproj -> C:\Users\miner\OneDrive\Documents\Games Programming\Code\MM_GameProgramming\Debug\MM_GameProgramming.exe
+C:\Users\miner\OneDrive\Documents\TSEGameRepo\GamesProg\MM_GameProgramming\MM_GameProgramming.cpp(72,30): warning C4474: 'printf' : too many arguments passed for format string
+C:\Users\miner\OneDrive\Documents\TSEGameRepo\GamesProg\MM_GameProgramming\MM_GameProgramming.cpp(72,30): message : placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+  MM_Square.cpp
+  Generating Code...
+C:\Users\miner\OneDrive\Documents\TSEGameRepo\GamesProg\MM_GameProgramming\MM_GameProgramming.cpp(136): warning C4715: 'SDL_main': not all control paths return a value
+  MM_GameProgramming.vcxproj -> C:\Users\miner\OneDrive\Documents\TSEGameRepo\GamesProg\MM_GameProgramming\Debug\MM_GameProgramming.exe

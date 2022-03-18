@@ -11,10 +11,14 @@
 #include "MM_Square.h"
 
 
+
 MM_Timer aTimer;
-const int DELTA_TIME = 50;
+const int DELTA_TIME = 1000 / 60;
 bool done = false;
 int x;
+
+
+
 
 MM_Square ExampleSquare;
 
@@ -34,27 +38,39 @@ int main(int argc, char* argv[])
 	//Create a renderer which draws to the window surface
 	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
+	SDL_Rect r;
+
+	r.x = 100;
+	r.y = 400;
+	r.w = 100;
+	r.h = 100;
+
+	ExampleSquare.Init();
+	int counter = 0;
+
+	//REMINDER put objects outside of while loop
+
+	//start of gameloop
 	while (!done)
 	{
 		//use home made timer provided by Olivier
 		aTimer.resetTicksTimer(); // resets a frame timer to zero
 
-		/*SDL_SetRenderDrawColor(renderer, 255, 0, 20, SDL_ALPHA_OPAQUE);
-		SDL_RenderClear(renderer);
-		ExampleSquare.Render(renderer);
-		SDL_RenderPresent(renderer);*/
+		
+		
 
 		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 		SDL_RenderClear(renderer);
 
-		SDL_Rect r;
-
-		r.x = 60;
-		r.y = 60;
-		r.w = 100;
-		r.h = 100;
-
 		
+		ExampleSquare.Input();
+		
+		ExampleSquare.Render(renderer);
+		
+		
+		
+		printf("The counter is: ", counter); //test if loop is working
+
 		//move square that was created previously in lecture
 
 		//r.x++;
@@ -76,37 +92,45 @@ int main(int argc, char* argv[])
 
 			{
 				switch (_event.key.keysym.sym) {
-				case SDLK_ESCAPE:
+				/*case SDLK_ESCAPE:
 					done = true;
 					printf("Application Quit");
-					break;
-				case SDLK_g:
-					printf("G key is Pressed! \n");
-					//r.x + 100;
-					break;
+					break;*/
 				case SDLK_f:
 					printf("Window is now fullscreen! \n");
 					SDL_SetWindowFullscreen(window, 1);
 					break;
-					case SDLK_h:
-						printf("H key is pressed!");
-						//SDL_GetWindowMinimumSize(window);
+				case SDLK_LEFT:
+					printf("Left Arrow key is Pressed! \n");
+					r.x--;
 					break;
+					case SDLK_RIGHT:
+						printf("Right Arrow key is pressed! \n");
+						r.x++;
+					break;
+					case SDLK_UP:
+						printf("Up Arrow key is pressed! \n");
+						r.y--;
+						break;
+					case SDLK_DOWN:
+						printf("Down Arrow key is pressed! \n");
+						r.y++;
+						break;
 
 				}
+			/*	if (aTimer.getTicks() < DELTA_TIME)
+				{
+					SDL_Delay(DELTA_TIME - aTimer.getTicks());
+
+				}*/
+				
 
 			}
 		}
 	
+		/*SDL_Quit;*/
 
-
-		SDL_Delay(1000);
+		
 	}
-
-	if (aTimer.getTicks() < DELTA_TIME)
-	{
-		SDL_Delay(DELTA_TIME - aTimer.getTicks());
-
-	}
-	SDL_Quit;
+	//end of gameloop
 }

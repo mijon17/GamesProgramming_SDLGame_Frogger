@@ -13,9 +13,10 @@ public:
 
 	void Init();
 	void Update();
-	void Input(int whichKey);
+	void Input();
 	void Render(SDL_Renderer* aRenderer);
-	SDL_Rect r;
+	SDL_Rect rec;
+	SDL_Rect rec1;
 
 	int x, y, height, width, R, G, B;
 };
