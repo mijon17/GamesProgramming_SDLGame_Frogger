@@ -139,17 +139,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="MM_GameContainerSquare.cpp" />
+    <ClCompile Include="MM_GameItem.cpp" />
     <ClCompile Include="MM_GameProgramming.cpp" />
     <ClCompile Include="MM_Square.cpp" />
     <ClCompile Include="MM_Timer.cpp" />
+    <ClCompile Include="MM_Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MM_GameContainerSquare.h" />
+    <ClInclude Include="MM_GameItem.h" />
     <ClInclude Include="MM_GameProgramming.h" />
+    <ClInclude Include="MM_GameWorld.h" />
     <ClInclude Include="MM_Square.h" />
     <ClInclude Include="MM_Timer.h" />
+    <ClInclude Include="MM_Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
