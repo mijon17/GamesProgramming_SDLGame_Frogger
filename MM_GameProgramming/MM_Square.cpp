@@ -1,80 +1,87 @@
 #include "MM_Square.h" 
+#include "MM_GameWorld.h"
+#include <vector>
+
+
+
+std::vector<MM_Square*> aSquareList;
+
 SDL_Event event;
 bool quit = false;
 
+
 MM_Square::MM_Square()
 {
-
+	SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, "Square Constructed with Param(%p)", this);
 }
 MM_Square::~MM_Square()
 {
-
+	SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, "Square Destroyed with Param(%p)", this);
 }
 
-void MM_Square::Init()
+void MM_Square::Init(int px, int py, int pw, int ph)
 {
-	rec.x = 70;
-	rec.y = 70;
-	rec.w = 140;
-	rec.h = 140;
-
-	rec1.x = 300;
-	rec1.y = 70;
-	rec1.w = 140;
-	rec1.h = 140;
-
 	
 
-
+	rec.x = px;
+	rec.y = py;
+	rec.w = pw;
+	rec.h = ph;
 
 }
 
 void MM_Square::Update() 
 {
+	
+		//rec.y += 1;
 
+	
+		
+
+	
 }
 void MM_Square::Input()
-
 {
 	while (SDL_PollEvent(&event))
-		if (event.type == SDL_QUIT)
-			quit = true;
-
-	//if (event.type == SDL_KEYDOWN && event.key.repeat == NULL)
-
-	switch (event.key.keysym.sym)
 	{
-	
-	case SDLK_a:
-		printf("Left Arrow key is Pressed! \n");
-		rec.x--;
-		break;
-	case SDLK_d:
-		printf("Right Arrow key is pressed! \n");
-		rec.x++;
-		break;
-	case SDLK_w:
-		printf("Up Arrow key is pressed! \n");
-		rec.y--;
-		break;
-	case SDLK_s:
-		printf("Down Arrow key is pressed! \n");
-		rec.y++;
-		break;
-	case SDLK_q:
-		quit = true;
-		SDL_Quit();
-		printf("Application Quit");
-	}
-}
+		/*	if (event.type == SDL_QUIT)
+				done = true;*/
+		if (event.type == SDL_KEYDOWN)
 
+		{
+			switch (event.key.keysym.sym)
+			{
+	
+			case SDLK_a:
+				printf("A key is Pressed!\n");
+				rec.x -= 10;
+				break;
+			case SDLK_d:
+				printf("D key is pressed! \n");
+				rec.x += 10;
+				break;
+			case SDLK_w:
+				printf("W key is pressed! \n");
+				rec.y -= 10;
+				break;
+			case SDLK_s:
+				printf("S key is pressed! \n");
+				rec.y += 10;
+				break;
+			}
+		
+
+		}
+	}
+
+}
 
 void MM_Square::Render(SDL_Renderer* renderer)
 {
-	SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+	SDL_SetRenderDrawColor(renderer, 150, 0, 255, 255);
 	SDL_RenderDrawRect(renderer, &rec);
+	SDL_RenderFillRect(renderer, &rec);
 
-	SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-	SDL_RenderDrawRect(renderer, &rec1);
+
 	
 }
